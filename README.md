@@ -50,7 +50,7 @@ $ export ARM_ACCESS_KEY=$ACCOUNT_KEY</code></pre>
 ## Create SPN to integrate with Github and Azure
  <pre><code>$ az ad sp create-for-rbac --name=“github” --role="Contributor" --scopes="/subscriptions/6fe48053-9347-440c-a003-028b264f4204" --sdk-auth</code></pre>
 
-## Apply IAC to Azure.
+## For Manual Apply IAC to Azure.
 #### Initialize the backend storage
 <pre><code>$ terraform init </code></pre>
 #### Check the output of configuration
