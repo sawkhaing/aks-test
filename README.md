@@ -59,8 +59,10 @@ $ export ARM_ACCESS_KEY=$ACCOUNT_KEY</code></pre>
 <pre><code>$ terraform apply </code></pre>
 #### Destroy the Infrastructure
 <pre><code>$ terraform destroy </code></pre>
+#### Get the kubeconfig from the AKS cluster
+<pre><code>$ az aks get-credentials --resource-group cluster1 --name cluster1 --admin </code></pre>
+<pre><code>$ az aks get-credentials --resource-group cluster2 --name cluster2 --admin </code></pre>
 
 ## Techanical Challenge
-
 - Learn spn
 - Learn azurerm storage backend
