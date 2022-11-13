@@ -21,9 +21,9 @@ jobs:
            - environment: test
              runner: ubuntu-latest
     env:
-         TF_VAR_AKS_SERVICE_PRINCIPAL_APP_ID: ${{ azure.TF_VAR_AKS_SERVICE_PRINCIPAL_APP_ID }}
-         TF_VAR_AKS_SERVICE_PRINCIPAL_CLIENT_SECRET: ${{ azure.TF_VAR_AKS_SERVICE_PRINCIPAL_CLIENT_SECRET }}
-         ARM_ACCESS_KEY: ${{ azure.ARM_ACCESS_KEY }}
+         TF_VAR_AKS_SERVICE_PRINCIPAL_APP_ID: ${{ secrets.TF_VAR_AKS_SERVICE_PRINCIPAL_APP_ID }}
+         TF_VAR_AKS_SERVICE_PRINCIPAL_CLIENT_SECRET: ${{ secrets.TF_VAR_AKS_SERVICE_PRINCIPAL_CLIENT_SECRET }}
+         ARM_ACCESS_KEY: ${{ secrets.ARM_ACCESS_KEY }}
     steps:
       - uses: actions/checkout@v2
       - uses: hashicorp/setup-terraform@v1
