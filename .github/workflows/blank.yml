@@ -1,23 +1,20 @@
-name: Run Azure Login with OpenID Connect
+# File: .github/workflows/workflow.yml
+
 on: [push]
 
-permissions:
-      id-token: write
-      contents: read
-      
-jobs: 
-  build-and-deploy:
+name: AzurePowerShellLoginSample
+
+jobs:
+
+  build:
     runs-on: ubuntu-latest
     steps:
-    - name: 'Az CLI login'
+    
+    - name: Login via Az module
       uses: azure/login@v1
       with:
-          client-id: ${{ secrets.ARM_CLIENT_ID }}
-          tenant-id: ${{ secrets.ARM_TENANT_ID }}
-          subscription-id: ${{ secrets.ARM_SUBSCRIPTION_ID }}
-  
-    - name: 'Run Azure CLI commands'
-      run: |
-          az account show
-          az group list
-          pwd
+        creds: ${{secrets.AZURE_CREDENTIALS}}
+        enable-AzPSSession: true 
+     
+     - run: |
+        Get-AzVM -ResourceGroupName "ResourceGroup11"
