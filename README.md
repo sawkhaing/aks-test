@@ -29,6 +29,12 @@ $ sudo apt-get update
 $ sudo apt-get install azure-cli
 </code></pre>
 
+#### Inatll kubectl
+<pre><code>$ curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+$ sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+$ kubectl version --client
+</code></pre>
+
 ## Create Blob Storage for tfstate
  <pre><code>$ export RESOURCE_GROUP_NAME=tfstate
 $ export STORAGE_ACCOUNT_NAME=tfstate$RANDOM
