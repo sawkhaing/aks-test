@@ -5,11 +5,12 @@ resource "azurerm_resource_group" "rg" {
 }
 
 resource "azurerm_kubernetes_cluster" "k8s" {
-  count               = 2
-  location            = var.resource_group_location
-  name                = var.cluster_name[count.index]
-  resource_group_name = azurerm_resource_group.rg[count.index].name
-  dns_prefix          = var.dns_prefix[count.index]
+  count                            = 2
+  location                         = var.resource_group_location
+  name                             = var.cluster_name[count.index]
+  resource_group_name              = azurerm_resource_group.rg[count.index].name
+  dns_prefix                       = var.dns_prefix[count.index]
+  http_application_routing_enabled = true
   tags = {
     Environment = "k8s"
   }
