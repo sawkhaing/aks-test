@@ -20,7 +20,7 @@ jobs:
       TF_VAR_aks_service_principal_app_id: ${{ secrets.TF_VAR_AKS_SERVICE_PRINCIPAL_APP_ID }}
       TF_VAR_aks_service_principal_client_secret: ${{ secrets.TF_VAR_AKS_SERVICE_PRINCIPAL_CLIENT_SECRET }}
     runs-on: ubuntu-latest
-    environment: production
+    environment: development
 
     # Use the Bash shell regardless whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
     defaults:
