@@ -3,13 +3,13 @@ variable "agent_count" {
 }
 
 variable "cluster_name" {
-  type    = list(string)
-  default = ["cluster1", "cluster2"]
+  type    = string
+  default = "cluster1"
 }
 
 variable "dns_prefix" {
-  type    = list(string)
-  default = ["cluster1", "cluster2"]
+  type    = string
+  default = "cluster1"
 }
 
 variable "resource_group_location" {
@@ -18,8 +18,8 @@ variable "resource_group_location" {
 }
 
 variable "azurerm_resource_group" {
-  type    = list(string)
-  default = ["cluster1", "cluster2"]
+  type    = string
+  default = "cluster1"
 }
 
 # The following two variable declarations are placeholder references.
